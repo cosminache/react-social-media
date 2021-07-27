@@ -1,10 +1,17 @@
 import React from "react";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { Login, Register, Newsfeed } from "./pages";
+import axios from "axios";
 
 function App() {
   return (
-    <div>
-      <h1>hello</h1>
-    </div>
+    <Router>
+      <Switch>
+        <Route path="/" exact component={Newsfeed} />
+        <Route path="/login" component={Login} />
+        <Route path="/register" component={Register} />
+      </Switch>
+    </Router>
   );
 }
 
